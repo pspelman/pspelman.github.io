@@ -5473,7 +5473,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Dropbox\Dropbox\Coding\philspelman\grayport\ang-grayport\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /Users/Phil/Dropbox/Coding/philspelman/grayport/ang-grayport/src/polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

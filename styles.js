@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Dropbox\Dropbox\Coding\philspelman\grayport\ang-grayport\src\scss\styles.scss */"./src/scss/styles.scss");
+module.exports = __webpack_require__(/*! /Users/Phil/Dropbox/Coding/philspelman/grayport/ang-grayport/src/scss/styles.scss */"./src/scss/styles.scss");
 
 
 /***/ })

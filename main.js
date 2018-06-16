@@ -78,7 +78,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<router-outlet></router-outlet>\n\n\n\n\n<!-- Footer -->\n<footer>\n  <div class=\"container text-center\">\n    <p>&copy; Philip J Spelman 2018</p>\n  </div>\n</footer>\n\n\n<!-- Map Section -->\n<div id='map' style='width: 60rem; height: 30rem; margin-left: auto; margin-right: auto;' hidden><h2>Travels and Such</h2>\n</div>\n"
+module.exports = "<app-navbar></app-navbar>\n\n<router-outlet></router-outlet>\n\n\n\n<!-- Footer -->\n<footer>\n  <div class=\"container text-center\">\n    <p>&copy; Philip J Spelman 2018</p>\n  </div>\n</footer>\n\n\n<!-- Map Section -->\n<div id='map' style='width: 60rem; height: 30rem; margin-left: auto; margin-right: auto;' hidden><h2>Travels and Such</h2>\n</div>\n"
 
 /***/ }),
 
@@ -89,7 +89,7 @@ module.exports = "<app-navbar></app-navbar>\n<router-outlet></router-outlet>\n\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".hidden {\n  display: none; }\n"
 
 /***/ }),
 
@@ -124,6 +124,10 @@ var AppComponent = /** @class */ (function () {
         // mapbox_token = "pk.eyJ1IjoicHNwZWxtYW4iLCJhIjoiY2poanJsNDBmMDRsYTMwcjA2aDFuODN4cSJ9.itOSiLnm059ORfgzcu8RXw";
         this.box = new _mapboxStuff__WEBPACK_IMPORTED_MODULE_2__["MapboxStuff"]();
         this.siteLogic = new _portfolio__WEBPACK_IMPORTED_MODULE_3__["Portfolio"]();
+        //   export class MainComponent {
+        //   @HostBinding('class.hidden') @Input() hidden = false;
+        //   @Input() caption: string;
+        // }
     }
     AppComponent.prototype.ngOnInit = function () {
         // this.box.initMapboxMap();
@@ -257,8 +261,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var MainComponent = /** @class */ (function () {
     function MainComponent() {
+        this.showResume = false;
     }
     MainComponent.prototype.ngOnInit = function () {
+        this.showResume = false;
+    };
+    MainComponent.prototype.toggleResume = function () {
+        if (this.showResume) {
+            this.showResume = false;
+        }
+        else {
+            this.showResume = true;
+        }
     };
     MainComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -843,7 +857,7 @@ var MapboxStuff = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">\n  <div class=\"container\">\n    <!--<a pageScroll class=\"navbar-brand\" href=\"#page-top\">Phil Spelman</a>-->\n    <a *ngIf=\"toggleNavbar\" pageScroll [routerLink]=\"['home']\" (click)=\"toggleNavbar = !toggleNavbar\"  href=\"#page-top\">\n      <span class=\"navbar-brand-homebutton\">Phil Spelman</span></a>\n\n    <a *ngIf=\"!toggleNavbar\" pageScroll [routerLink]=\"['home']\" href=\"#page-top\">\n      <span class=\"navbar-brand-homebutton\">Phil Spelman</span></a>\n\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"toggleNavbar = !toggleNavbar\">\n      <span class=\"fa fa-bars\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse justify-content-end\" [ngbCollapse]=\"!toggleNavbar\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item active\">\n          <a class=\"nav-link\" pageScroll  [routerLink]=\"['home']\" href=\"#page-top\" (click)=\"toggleNavbar = !toggleNavbar\">\n            Home <span class=\"sr-only\" >(current)</span></a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" pageScroll\n             [routerLink]=\"['home']\"\n             (click)=\"toggleNavbar = !toggleNavbar\"\n             href=\"#about\" >\n            About</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" pageScroll [routerLink]=\"['home']\" (click)=\"toggleNavbar = !toggleNavbar\" href=\"#projects\" >projects</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" pageScroll [routerLink]=\"['home']\" (click)=\"toggleNavbar = !toggleNavbar\" href=\"#contact\" >contact</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" pageScroll [routerLink]=\"['resume']\" skipLocationChange (click)=\"toggleNavbar = !toggleNavbar\"  href=\"#resume\" >résumé</a>\n        </li>\n\n      </ul>\n    </div>\n  </div>\n</nav>\n"
+module.exports = "<!-- Navigation -->\n<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\">\n  <div class=\"container\">\n    <!--<a pageScroll class=\"navbar-brand\" href=\"#page-top\">Phil Spelman</a>-->\n    <a *ngIf=\"toggleNavbar\" pageScroll [routerLink]=\"['home']\" (click)=\"toggleNavbar = !toggleNavbar\"  href=\"#page-top\">\n      <span class=\"navbar-brand-homebutton\">Phil Spelman</span></a>\n\n    <a *ngIf=\"!toggleNavbar\" pageScroll [routerLink]=\"['home']\" href=\"#page-top\">\n      <span class=\"navbar-brand-homebutton\">Phil Spelman</span></a>\n\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"toggleNavbar = !toggleNavbar\">\n      <span class=\"fa fa-bars\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse justify-content-end\" [ngbCollapse]=\"!toggleNavbar\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item active\">\n          <a class=\"nav-link\" pageScroll  [routerLink]=\"['home']\" href=\"#page-top\" (click)=\"toggleNavbar = !toggleNavbar\">\n            Home <span class=\"sr-only\" >(current)</span></a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" pageScroll\n             [routerLink]=\"['home']\"\n             (click)=\"toggleNavbar = !toggleNavbar\"\n             href=\"#about\" >\n            About</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" pageScroll [routerLink]=\"['home']\" (click)=\"toggleNavbar = !toggleNavbar\" href=\"#projects\" >projects</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" pageScroll [routerLink]=\"['home']\" (click)=\"toggleNavbar = !toggleNavbar\" href=\"#contact\" >contact</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" pageScroll [routerLink]=\"['resume']\" skipLocationChange (click)=\"toggleNavbar = !toggleNavbar\"  href=\"#resume\" >résumé</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -881,6 +895,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var NavbarComponent = /** @class */ (function () {
     function NavbarComponent() {
+        this.showResume = false;
     }
     NavbarComponent.prototype.ngOnInit = function () {
     };
@@ -1042,7 +1057,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Dropbox\Dropbox\Coding\philspelman\grayport\ang-grayport\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/Phil/Dropbox/Coding/philspelman/grayport/ang-grayport/src/main.ts */"./src/main.ts");
 
 
 /***/ })
